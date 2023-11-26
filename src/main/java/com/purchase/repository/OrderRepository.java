@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 @Repository
-public interface Order extends JpaRepository<Order, Long> {
+public interface OrderRepository extends JpaRepository<OrderRepository, Long> {
 
-    ArrayList<Order> findByOrderDate(LocalDate term);
+    ArrayList<OrderRepository> findByOrderDate(LocalDate term);
 }
