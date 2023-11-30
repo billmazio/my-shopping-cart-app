@@ -11,5 +11,5 @@ import java.util.ArrayList;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
-    ArrayList<OrderRepository> findByOrderDate(LocalDate term);
+    ArrayList<Order> findByOrderDate(LocalDate term);
 }

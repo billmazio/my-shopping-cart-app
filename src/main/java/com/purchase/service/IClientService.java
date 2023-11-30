@@ -10,7 +10,7 @@ import java.util.List;
 public interface IClientService {
      Page<Client> findPaginated(Pageable pageable, String term);
 
-     void createOrder(Client client, List<Item> items);
+     void createOrder(Client client);
 
      List<Item> findItemsByClientId(Long id);
 
