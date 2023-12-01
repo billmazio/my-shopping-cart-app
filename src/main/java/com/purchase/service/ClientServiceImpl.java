@@ -37,13 +37,6 @@ public class ClientServiceImpl implements IClientService{
     }
 
     @Override
-    @Transactional
-    public void createOrder(Client client) {
-        clientRepository.save(client);
-
-
-    }
-    @Override
     public List<Item> findItemsByClientId(Long clientId) {
         // Fetch all orders and filter them for the given student ID
         return orderRepository.findAll().stream()
