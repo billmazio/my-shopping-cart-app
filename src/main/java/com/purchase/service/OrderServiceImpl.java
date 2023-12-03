@@ -1,5 +1,6 @@
 package com.purchase.service;
 
+import com.purchase.dto.OrderRequest;
 import com.purchase.entity.Client;
 import com.purchase.entity.Item;
 import com.purchase.entity.Order;
@@ -31,6 +32,17 @@ public class OrderServiceImpl implements IOrderService {
             order.setItem(item); // Set the items for the order
             orderRepository.save(order);
         }
+    }
+
+    @Override
+    public void createOrder(OrderRequest orderRequest, List<Long> itemIds) {
+        Long clientId = orderRequest.getClientId();
+
+    }
+
+    @Override
+    public List<Order> getAll() {
+        return orderRepository.findAll();
     }
 
 }

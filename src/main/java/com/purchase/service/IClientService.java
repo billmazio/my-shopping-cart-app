@@ -12,5 +12,6 @@ public interface IClientService {
 
      List<Item> findItemsByClientId(Long id);
 
+    Client findClientById(Long clientId);
 }
 

@@ -1,5 +1,6 @@
 package com.purchase.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -29,6 +30,7 @@ public class Item {
     private String code;
 
     @OneToMany(mappedBy = "item",cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Order> orders;
 
 }

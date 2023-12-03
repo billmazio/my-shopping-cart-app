@@ -12,11 +12,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,6 +42,11 @@ public class ClientServiceImpl implements IClientService{
                 .map(Order::getItem)
                 .distinct() // Ensure each seminar is listed only once
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Client findClientById(Long clientId) {
+        return clientRepository.getById(clientId);
     }
 
     private Page<Client> page(Pageable pageable, String term) {

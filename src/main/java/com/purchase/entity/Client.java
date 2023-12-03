@@ -1,5 +1,7 @@
 package com.purchase.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.purchase.dto.OrderRequest;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,8 +13,8 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-public class Client {
+@Data
+public class Client  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,5 +35,10 @@ public class Client {
     private String email;
 
     @OneToMany(mappedBy = "client",cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Order> orders;
+
+    public Client(String name) {
+        this.name = name;
+    }
 }
